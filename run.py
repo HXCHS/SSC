@@ -29,7 +29,7 @@ def check_repository():
         print("Repository is up to date.")
 # Function to authenticate users
 def authenticate():
-    os.system('cls' if os.name == 'nt' else 'clear')  # Clears the terminal screen
+    #os.system('cls' if os.name == 'nt' else 'clear')  # Clears the terminal screen
     custom_fig = pyfiglet.Figlet(font='slant')
     ascii_art = custom_fig.renderText('Agent Login')
     print(ascii_art)
