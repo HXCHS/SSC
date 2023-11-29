@@ -7,7 +7,7 @@ init()
 
 # Sample user data (replace this with reading from the 'logins' file)
 users = {
-    "aearnes01": {"password": "aaea1111", "clearance_level": "SSC"},
+    "aearnes01": {"password": "password", "clearance_level": "SSC"},
     "dragondung": {"password": "bigdickrandy", "clearance_level": "SSC"},
     "daroon": {"password": "sailor", "clearance_level": "Student"}
 }
