@@ -1,7 +1,6 @@
 import os
 import time
 import pyfiglet
-import subprocess
 
 from colorama import init, Fore, Back, Style
 init()
@@ -22,20 +21,13 @@ files = {
 
 # Function to authenticate users
 def authenticate():
-    #os.system('cls' if os.name == 'nt' else 'clear')  # Clears the terminal screen
+    os.system('cls' if os.name == 'nt' else 'clear')  # Clears the terminal screen
     custom_fig = pyfiglet.Figlet(font='slant')
     ascii_art = custom_fig.renderText('Agent Login')
     print(ascii_art)
     username = input("Enter your username: ")
     password = input("Enter your password: ")
-def check_repository():
-    status_output = subprocess.run(['git', 'status', '-uno'], capture_output=True, text=True)
-    status = status_output.stdout.lower()
 
-    if 'your branch is behind' in status:
-        print("Warning: Repository is outdated. Please update before running the program.")
-    else:
-        print("Repository is up to date.")
     # Simulating authorization check with a loading bar
     print("Checking authorization...") 
     progress_width = 20
@@ -80,7 +72,6 @@ def view_file_content(choice):
         print("Invalid File Choice.")
 # Main function
 def main():
-    check_repository()  # Check repository status before proceeding
     clearance = authenticate()
     if clearance:
         print(f"Welcome! Your clearance level is {Fore.YELLOW + Style.BRIGHT}{clearance}{Style.RESET_ALL}.")
