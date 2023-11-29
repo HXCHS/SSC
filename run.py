@@ -19,14 +19,7 @@ files = {
     "OperationAlpha": {"classification": "SCA", "content": "Attempt to 'Break Into' the school through a back door, durring lunch.\nThe Objective is to see if it is possile for anyone, an adult, to break in as well.\n \nAssigned Agents: Alexa Earnest \n \nDate: November 29th, 2023 | C Lunch\n \nResults: Successfully Broke Into the School \n \nDetails: Exited School at the Door at the end of D Hall Near the Activity Directors Office.\n I proceeded to Go to the door at the outside staircase near the C200s, a person came to the door and nodded no,\n they wouldnt let me in. I then walked the path to the YMCA and walked back, \n and headed to door C5 or D5 the one where the courtyard meets C100's and I was let in after I knocked on the door."},
     "OperationBravo": {"classification": "SCA", "content": ""},
 }
-def check_repository():
-    status_output = subprocess.run(['git', 'status', '-uno'], capture_output=True, text=True)
-    status = status_output.stdout.lower()
 
-    if 'your branch is behind' in status:
-        print("Warning: Repository is outdated. Please update before running the program.")
-    else:
-        print("Repository is up to date.")
 # Function to authenticate users
 def authenticate():
     #os.system('cls' if os.name == 'nt' else 'clear')  # Clears the terminal screen
@@ -35,7 +28,14 @@ def authenticate():
     print(ascii_art)
     username = input("Enter your username: ")
     password = input("Enter your password: ")
+def check_repository():
+    status_output = subprocess.run(['git', 'status', '-uno'], capture_output=True, text=True)
+    status = status_output.stdout.lower()
 
+    if 'your branch is behind' in status:
+        print("Warning: Repository is outdated. Please update before running the program.")
+    else:
+        print("Repository is up to date.")
     # Simulating authorization check with a loading bar
     print("Checking authorization...") 
     progress_width = 20
