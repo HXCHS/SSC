@@ -1,6 +1,7 @@
 import os
 import time
 import pyfiglet
+import subprocess
 
 from colorama import init, Fore, Back, Style
 init()
