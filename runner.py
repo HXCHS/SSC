@@ -1,12 +1,7 @@
-from flask import Flask
+import subprocess
 
-app = Flask(__name__)
+def git_pull():
+    subprocess.run(['git', 'pull'])
 
-@app.route('/run_my_python_code')
-def run_my_python_code():
-    # Your Python code here
-    result = "Hello from Python!"
-    return result
-
-if __name__ == '__main__':
-    app.run(debug=True)
+if __name__ == "__main__":
+    git_pull()
